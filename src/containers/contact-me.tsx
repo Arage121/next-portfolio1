@@ -36,7 +36,7 @@ const ContactMe = (props: Props) => {
         <h4 className="mt-20 text-xl sm:text-2xl font-semibold text-center text-[#8892b0]">
           I have got just what you need.{" "}
           <span className="decoration-[#64ffda]/50 underline block sm:inline text-[#8892b0]">
-            Let's Talk
+            Let&apos;s Talk
           </span>
         </h4>
 
