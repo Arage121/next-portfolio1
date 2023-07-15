@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 import { useForm, SubmitHandler } from "react-hook-form";
 
@@ -13,10 +13,17 @@ type Inputs = {
 type Props = {};
 
 const ContactMe = (props: Props) => {
+  const [ name, setName ] = useState("");
+  const [ email, setEmail ] = useState("");
+  const [ sub, setSub ] = useState("");
+  const [ msg, setMsg ] = useState("");
+
   const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
     window.location.href = `mailto:rajayush746@gmail?subject=${formData.subject}&body=
     Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`;
+    setName(""); setEmail("");
+    setSub(""); setMsg("");
   };
 
   return (
@@ -26,7 +33,7 @@ const ContactMe = (props: Props) => {
     >
       <h3 className='absolute top-24 text-2xl font-bold text-[#ccd6f6]'> / contact me</h3>
       <div className="flex flex-col space-y-10">
-        <h4 className="text-xl sm:text-2xl font-semibold text-center text-[#8892b0]">
+        <h4 className="mt-20 text-xl sm:text-2xl font-semibold text-center text-[#8892b0]">
           I have got just what you need.{" "}
           <span className="decoration-[#64ffda]/50 underline block sm:inline text-[#8892b0]">
             Let's Talk
@@ -43,6 +50,10 @@ const ContactMe = (props: Props) => {
               placeholder="Name"
               className="contactInput"
               type="text"
+              autoComplete="off"
+              required
+              value={name}
+              onChange={(e) => {setName(e.target.value)}}
             />
 
             <input
@@ -50,6 +61,10 @@ const ContactMe = (props: Props) => {
               placeholder="Email"
               className="contactInput"
               type="email"
+              autoComplete="off"
+              required
+              value={email}
+              onChange={(e) => {setEmail(e.target.value)}}
             />
           </div>
 
@@ -58,12 +73,20 @@ const ContactMe = (props: Props) => {
             placeholder="Subject"
             className="contactInput"
             type="text"
+            autoComplete="off"
+            required
+            value={sub}
+            onChange={(e) => {setSub(e.target.value)}}
           />
 
           <textarea
             {...register("message")}
             placeholder="Message"
             className="contactInput"
+            autoComplete="off"
+            required
+            value={msg}
+            onChange={(e) => {setMsg(e.target.value)}}
           />
 
           <button className="bg-[#64ffda] py-5 px-10 rounded-md text-black font-bold text-lg tracking-[3px]">

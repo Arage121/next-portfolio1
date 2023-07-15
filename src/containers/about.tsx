@@ -22,7 +22,7 @@ const About = (props: Props) => {
       />
 
       <div className='space-y-10 px-0 md:px-10'>
-        <h4 className='text-2xl font-semibold mt-16 text-[#ccd6f6]'>
+        <h4 className='text-2xl font-semibold mt-10 mb-[-1.5em] text-[#ccd6f6]'>
           Here is a <span className='underline decoration-[#64ffda]'>small</span> background
         </h4>
         <p className='text-sm text-[#8892b0]'>

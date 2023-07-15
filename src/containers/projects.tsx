@@ -5,15 +5,10 @@ import { motion } from "framer-motion";
 import { Image } from "@/ui";
 import { useQuery } from "react-query";
 import { Loading, Error } from "@/ui";
+import { MdOutlineDriveFolderUpload } from 'react-icons/md';
+import { AiFillGithub } from 'react-icons/ai'
+import fetchData from "@/utils/getProjectData";
 
-
-const fetchData = async () => {
-  const res = await fetch(
-    "https://portfolio-api-159j.onrender.com/user_details"
-  );
-  const resultData = (await res.json()) as any;
-  return resultData;
-};
 
 type Props = {};
 
@@ -25,12 +20,6 @@ const Projects = (props: Props) => {
   );
 
   const project: any = data ?? [];
-
-  const skillImages = [
-    "/assets/images/css.png",
-    "/assets/images/html.png",
-    "/assets/images/javascript.png",
-  ];
 
   return (
     <motion.div
@@ -45,7 +34,7 @@ const Projects = (props: Props) => {
         / projects
       </h3>
 
-      {isLoading || isFetching ? (
+      {isLoading ? (
         <Loading />
       ) : isError ? (
         <Error />
@@ -55,7 +44,7 @@ const Projects = (props: Props) => {
             ? project.map((item: any, index: number) => (
                 <div
                   key={item._id + index.toString()}
-                  className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center mt-16  p-20 md:p-44 h-screen"
+                  className="w-screen flex-shrink-0 snap-center flex flex-col xl:flex-row items-center justify-center mt-16 p-20 md:p-44 h-screen"
                 >
                   <Image
                     initial={{
@@ -67,47 +56,38 @@ const Projects = (props: Props) => {
                     viewport={{ once: true }}
                     src={item.src}
                     alt="none"
-                    className="sm:h-[200px] h-[185px]"
+                    className="xl:h-[315px] xl:w-[38vw] h-[185px] xl:mb-0 xl:mr-4 mb-4 rounded-md shadow-lg shadow-black/30"
                   />
-
-                  <div className="flex gap-5 items-center">
-                    {skillImages.map((src, index) => (
-                      <img
-                        src={src}
-                        key={index}
-                        className="h-8"
-                        alt="skill-images"
-                      />
-                    ))}
-                  </div>
-                  <div className="flex gap-10 items-center">
-                    <a
-                      target="_blank"
-                      href={item.dlink}
-                      className="text-xl  text-[#64ffda] flex items-center hover:bg-[#64ffda] hover:px-2 hover:text-black transition-colors duration-200"
-                    >
-                      Demo
-                    </a>
+                <div className=" xl:w-72 w-[21rem] sm:w-96 xl:h-[320px] h-[215px] flex flex-col items-center bg-[#0f1c2e]/60 p-7 xl:p-10 xl:px-4 rounded-lg xl:rounded-2xl xl:hover:bg-[#0f1c2e]/70 lg:hover:mb-4 lg:hover:duration-300 shadow-lg shadow-black/30">
+                  <div className="flex xl:gap-5 gap-8 items-center xl:mt-[-12px]">
                     <a
                       target="_blank"
                       href={item.clink}
-                      className="text-xl  text-[#64ffda] flex items-center hover:bg-[#64ffda] hover:text-black  hover:px-2 transition-colors duration-200"
+                      className="text-[26px] text-[#64ffda] flex items-center"
                     >
-                      Code
+                      <AiFillGithub />
+                    </a>
+                    <p className="text-[15px] font-semibold">{item.skills}</p>
+                    <a
+                      target="_blank"
+                      href={item.dlink}
+                      className="text-3xl text-[#64ffda] flex items-center"
+                    >
+                      <MdOutlineDriveFolderUpload />
                     </a>
                   </div>
 
-                  <div className="space-y-10 px-0 max-w-6xl">
-                    <h4 className="text-xl sm:text-2xl xl:text-3xl font-semibold text-center mb-[-1em] xl:mb-[-20px] text-[#ccd6f6]">
+                  <div className="space-y-10 px-4 max-w-6xl overflow-y-scroll scrollbar-thin scrollbar-track-[#0f1c2e]/60 mt-4 scrollbar-thumb-[#64ffda]/80">
+                    <h4 className="text-xl sm:text-[1.40rem] font-semibold text-left mb-[-1em] xl:mb-[-25px] text-[#ccd6f6]">
                       <span className="underline decoration-[#64ffda]/50 text-[#ccd6f6]">
-                        {`Case Study ${0 + 1} of ${project.length}:`}
-                      </span>
                       {` ${item.name}`}
+                      </span>  
                     </h4>
 
-                    <p className="text-sm md:text-left xl:text-[16.5px] text-[#8892b0]">
+                    <p className="text-sm text-left xl:text-[14px] text-[#8892b0]">
                       {item.desc}
                     </p>
+                    </div>
                   </div>
                 </div>
               ))

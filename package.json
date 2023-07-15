@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@heroicons/react": "^2.0.18",
+    "@mui/material": "^5.13.5",
     "@types/node": "20.2.3",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
@@ -17,10 +20,11 @@
     "eslint-config-next": "13.4.3",
     "framer-motion": "^10.12.16",
     "heroicons": "^2.0.18",
-    "next": "13.4.3",
+    "next": "^13.4.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.44.3",
+    "react-icons": "^4.9.0",
     "react-query": "^3.39.3",
     "react-scroll": "^1.8.9",
     "react-simple-typewriter": "^5.0.1",

@@ -10,7 +10,6 @@ export default function Page() {
     scrollbar scrollbar-track-[#0f1c2e] scrollbar-thumb-[#64ffda]/80"
     >
       <Header />
-
       <section id="home" className="snap-start">
         <Hero />
       </section>
