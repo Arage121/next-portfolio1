@@ -43,7 +43,6 @@ const Header = (props: Props) => {
         className='flex flex-row items-center'>
         <SocialIcon bgColor='transparent' fgColor='gray' url="https://www.linkedin.com/in/ayush-raj74/" target='_blank'/>
         <SocialIcon bgColor='transparent' fgColor='gray' url="https://github.com/Arage121" target='_blank' />
-        <SocialIcon bgColor='transparent' fgColor='gray' url="https://resume.com/jaketrent"/>
         <SocialIcon bgColor='transparent' fgColor='gray' url="https://mailto:rajayush@gmail.com" target='_blank' />
         </motion.div>
     </header>
