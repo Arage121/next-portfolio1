@@ -8,6 +8,6 @@ type Props = {
     [key: string]: any
 }
 
-const About = (props: Props) => <motion.img {...props}/>
+const About = (props: Props) => <motion.img {...props} alt={`props.src + ${Math.random(1,10)}`}/>
 
 export default About;
