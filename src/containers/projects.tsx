@@ -44,7 +44,7 @@ const Projects = (props: Props) => {
             ? project.map((item: any, index: number) => (
                 <div
                   key={item._id + index.toString()}
-                  className="w-screen flex-shrink-0 snap-center flex flex-col xl:flex-row items-center justify-center mt-16 p-20 md:p-44 h-screen"
+                  className="w-screen flex-shrink-0 snap-center flex flex-col xl:flex-row items-center justify-center mt-16 md:p-44 h-screen"
                 >
                   <Image
                     initial={{
@@ -56,9 +56,9 @@ const Projects = (props: Props) => {
                     viewport={{ once: true }}
                     src={item.src}
                     alt="none"
-                    className="xl:h-[315px] xl:w-[38vw] h-[185px] xl:mb-0 xl:mr-4 mb-4 rounded-md shadow-lg shadow-black/30"
+                    className="xl:h-[315px] xl:w-[38vw] h-[185px] w-[19.5rem] sm:w-96 xl:mb-0 xl:mr-4 mb-4 rounded-md shadow-lg shadow-black/30"
                   />
-                <div className=" xl:w-72 w-[21rem] sm:w-96 xl:h-[320px] h-[215px] flex flex-col items-center bg-[#0f1c2e]/60 p-7 xl:p-10 xl:px-4 rounded-lg xl:rounded-2xl xl:hover:bg-[#0f1c2e]/70 lg:hover:mb-4 lg:hover:duration-300 shadow-lg shadow-black/30">
+                <div className=" xl:w-72 w-[19.5rem] sm:w-96 xl:h-[320px] h-[215px] flex flex-col items-center bg-[#0f1c2e]/60 p-7 xl:p-10 xl:px-4 rounded-lg xl:rounded-2xl xl:hover:bg-[#0f1c2e]/70 lg:hover:mb-4 lg:hover:duration-300 shadow-lg shadow-black/30">
                   <div className="flex xl:gap-5 gap-8 items-center xl:mt-[-12px]">
                     <a
                       target="_blank"
@@ -67,7 +67,7 @@ const Projects = (props: Props) => {
                     >
                       <AiFillGithub />
                     </a>
-                    <p className="text-[15px] font-semibold">{item.skills}</p>
+                    <p className="text-[13px] sm:text-[15px] font-semibold">{item.skills}</p>
                     <a
                       target="_blank"
                       href={item.dlink}

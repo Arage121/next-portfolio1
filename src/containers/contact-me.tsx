@@ -44,11 +44,11 @@ const ContactMe = (props: Props) => {
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col space-y-2 w-fit mx-auto"
         >
-          <div className="flex space-x-2">
+          <div className="flex space-x-1 sm:spacex-2">
             <input
               {...register("name")}
               placeholder="Name"
-              className="contactInput"
+              className="contactInput w-36 sm:w-52"
               type="text"
               autoComplete="off"
               required
@@ -59,7 +59,7 @@ const ContactMe = (props: Props) => {
             <input
               {...register("email")}
               placeholder="Email"
-              className="contactInput"
+              className="contactInput w-36 sm:w-52"
               type="email"
               autoComplete="off"
               required
